@@ -1,0 +1,30 @@
+@startuml
+
+' Entity-Relationship Diagram: Organization
+
+' hide the circle with letter
+hide circle
+
+Organization ||..|{ Division
+
+Division ||..|{ Project
+Division ||..|{ Staff
+
+Project }o..o{ Staff
+Project ||..o{ Service
+Project ||..o{ Product
+
+Staff ||..|{ Employee
+Staff ||..|{ Contractor
+
+Service ||..|{ Work_Statement
+Service ||..|{ Deliverable
+
+Deliverable ||..|{ Deliverable_Task
+Deliverable ||..|| Deliverable_Date
+
+Product ||..|{ Requirement
+Product ||..|{ Implementation
+Product ||..|{ Realization
+
+@enduml

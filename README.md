@@ -1,7 +1,7 @@
 # Teamsite
 Teamsite web application via LAMP stack
 
-Teamsite is a collaboration site that helps software development teams build great products. It is both a project management and an engineering methodology tool. It provides flexibility while also being somewhat opinionated in the overall execution process.
+**Teamsite** is a collaboration site that helps software development teams build great products. It is both a project management and an engineering methodology tool. It provides flexibility while also being somewhat opinionated in the overall execution process.
 
 This technology stack may be used as a proof of concept, or may evolve into the final product. That's to be determined. A more robust platform to explore later is Java + Spring + React. For now, Java + Selenium will augment teamsite as an an automated testing service.
 
