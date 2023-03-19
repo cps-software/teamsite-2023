@@ -2,10 +2,10 @@
 
 [Introduction](00_intro/introduction.md)
 
-- [Git for People](01_git/git_for_people.md)
-    - [Getting Started](01_git/getting_started.md)
-    - [Working with Branches](01_git/git_branches.md)
-    - [Git Flow](01_git/git_flow.md)
+- [Overview](01_overview/overview.md)
+    - [System Context](01_overview/context_view.md)
+    - [Entities & Relationships](01_overview/erd_view.md)
+    - [Git Flow](01_overview/git_flow.md)
 - [C++ for People](02_cpp/cpp_for_people.md)
     - [Getting Started](02_cpp/getting_started.md)
 - [Java for People](03_java/java_for_people.md)

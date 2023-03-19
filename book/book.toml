@@ -3,7 +3,7 @@ authors = ["Chuck Sylvester"]
 language = "en"
 multilingual = false
 src = "src"
-title = "CPS Handbook"
+title = "Teamsite Documentation"
 
 [build]
 build-dir ="../docs"
