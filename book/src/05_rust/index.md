@@ -1,3 +1,3 @@
-# Rust for People
+# Rust
 
 Things I always forget.

@@ -1,3 +1,3 @@
-# Java for People
+# Java
 
 Things I always forget.
