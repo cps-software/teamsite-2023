@@ -176,6 +176,10 @@
 <p>To quit the inteactive shell:</p>
 <pre><code class="language-bash">\q
 </code></pre>
+<h4 id="add-mariadb-to-path"><a class="header" href="#add-mariadb-to-path">Add MariaDB to $PATH</a></h4>
+<p>To add visibility to the MariaDB executables, update .zshrc to expand the $PATH environment variable:</p>
+<pre><code class="language-text">export PATH=/Applications/XAMPP/bin:$PATH
+</code></pre>
 <h4 id="start-mariadb-to-administer"><a class="header" href="#start-mariadb-to-administer">Start MariaDB to Administer</a></h4>
 <p>Launch MacOS app, manager-osx.
 This starts the MariaDB Application Manager
@@ -215,7 +219,13 @@ MariaDB&gt; desc [tablename];</p>
 <pre><code class="language-text">source [/full/path/file.sql]
 </code></pre>
 <p>Run each of the following scripts in this order:</p>
-<pre><code class="language-text">source /Library/WebServer/Documents/nca-magellan/dbscript/create_db_magellan.sql
+<pre><code class="language-text">source ~/swdev/csw/teamsite/dbscript/create_db_teamsite.sql
+source ~/swdev/csw/teamsite/dbscript/create_tbl_user_account.sql
+source ~/swdev/csw/teamsite/dbscript/insert_row_user_account.sql
+source ~/swdev/csw/teamsite/dbscript/create_tbl_user_profile.sql
+source ~/swdev/csw/teamsite/dbscript/insert_row_user_profile.sql
+
+(address below later)
 source /Library/WebServer/Documents/nca-magellan/dbscript/insert_demo_data.sql
 source /Library/WebServer/Documents/nca-magellan/dbscript/create_tbl_funeral_home.sql
 source /Library/WebServer/Documents/nca-magellan/dbscript/create_tbl_zipcode.sql
@@ -341,7 +351,7 @@ java -cp ../target ClassOne
 java -classpath ../target com.csylvester.app.ClassOne
 java -cp ../target com.csylvester.app.ClassOne
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="lamp-for-people"><a class="header" href="#lamp-for-people">LAMP for People</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lamp"><a class="header" href="#lamp">LAMP</a></h1>
 <p>Things I always forget.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started-1"><a class="header" href="#getting-started-1">Getting Started</a></h1>
 <h3 id="topic-one"><a class="header" href="#topic-one">Topic One</a></h3>
@@ -351,7 +361,7 @@ java -cp ../target com.csylvester.app.ClassOne
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rust"><a class="header" href="#rust">Rust</a></h1>
 <p>Things I always forget.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rust-sub-section-2"><a class="header" href="#rust-sub-section-2">Rust Sub Section 2</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jlv-dev-setup"><a class="header" href="#jlv-dev-setup">JLV Dev Setup</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jlv-dev"><a class="header" href="#jlv-dev">JLV Dev</a></h1>
 <h2 id="install-and-configure-jlv-on-a-local-developer-machine"><a class="header" href="#install-and-configure-jlv-on-a-local-developer-machine">Install and configure JLV on a local developer machine</a></h2>
 <p>As outlined in <em>JLV Confluence Developer Handbook - Install and Run JLV 3.0</em><br />
 By David King</p>

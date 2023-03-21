@@ -15,6 +15,12 @@ To quit the inteactive shell:
 \q
 ```
 
+#### Add MariaDB to $PATH
+To add visibility to the MariaDB executables, update .zshrc to expand the $PATH environment variable:
+```text
+export PATH=/Applications/XAMPP/bin:$PATH
+```
+
 #### Start MariaDB to Administer
 Launch MacOS app, manager-osx.
 This starts the MariaDB Application Manager
@@ -70,7 +76,13 @@ source [/full/path/file.sql]
 
 Run each of the following scripts in this order:
 ```text
-source /Library/WebServer/Documents/nca-magellan/dbscript/create_db_magellan.sql
+source ~/swdev/csw/teamsite/dbscript/create_db_teamsite.sql
+source ~/swdev/csw/teamsite/dbscript/create_tbl_user_account.sql
+source ~/swdev/csw/teamsite/dbscript/insert_row_user_account.sql
+source ~/swdev/csw/teamsite/dbscript/create_tbl_user_profile.sql
+source ~/swdev/csw/teamsite/dbscript/insert_row_user_profile.sql
+
+(address below later)
 source /Library/WebServer/Documents/nca-magellan/dbscript/insert_demo_data.sql
 source /Library/WebServer/Documents/nca-magellan/dbscript/create_tbl_funeral_home.sql
 source /Library/WebServer/Documents/nca-magellan/dbscript/create_tbl_zipcode.sql

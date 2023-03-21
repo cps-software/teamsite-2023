@@ -144,6 +144,10 @@
 <p>To quit the inteactive shell:</p>
 <pre><code class="language-bash">\q
 </code></pre>
+<h4 id="add-mariadb-to-path"><a class="header" href="#add-mariadb-to-path">Add MariaDB to $PATH</a></h4>
+<p>To add visibility to the MariaDB executables, update .zshrc to expand the $PATH environment variable:</p>
+<pre><code class="language-text">export PATH=/Applications/XAMPP/bin:$PATH
+</code></pre>
 <h4 id="start-mariadb-to-administer"><a class="header" href="#start-mariadb-to-administer">Start MariaDB to Administer</a></h4>
 <p>Launch MacOS app, manager-osx.
 This starts the MariaDB Application Manager
@@ -183,7 +187,13 @@ MariaDB&gt; desc [tablename];</p>
 <pre><code class="language-text">source [/full/path/file.sql]
 </code></pre>
 <p>Run each of the following scripts in this order:</p>
-<pre><code class="language-text">source /Library/WebServer/Documents/nca-magellan/dbscript/create_db_magellan.sql
+<pre><code class="language-text">source ~/swdev/csw/teamsite/dbscript/create_db_teamsite.sql
+source ~/swdev/csw/teamsite/dbscript/create_tbl_user_account.sql
+source ~/swdev/csw/teamsite/dbscript/insert_row_user_account.sql
+source ~/swdev/csw/teamsite/dbscript/create_tbl_user_profile.sql
+source ~/swdev/csw/teamsite/dbscript/insert_row_user_profile.sql
+
+(address below later)
 source /Library/WebServer/Documents/nca-magellan/dbscript/insert_demo_data.sql
 source /Library/WebServer/Documents/nca-magellan/dbscript/create_tbl_funeral_home.sql
 source /Library/WebServer/Documents/nca-magellan/dbscript/create_tbl_zipcode.sql
