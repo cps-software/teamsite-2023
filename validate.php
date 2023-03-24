@@ -39,11 +39,6 @@
             }
 		</script>
 
-        <?php
-        print($_POST["user-name"] . "<br />");
-        print($_POST["user-password"] . "<br />");
-        ?>
-	
         <div class="container">
             <div class="row">
                 <div class="span12">
@@ -55,6 +50,7 @@
                         $uname=$_POST["user-name"];
                         $upass=$_POST["user-password"];
                         $continue = 0;
+
                         // Include MariaDB server and teamsite database connection Include File
                         include "./inc_dbconnect.php";
 
@@ -108,15 +104,18 @@
                             // store session data
                             $_SESSION['user_id']=$row1['id'];
                             $_SESSION['user_name']=$row1['username'];
+
                             // build SELECT query for station_id and favorite color
                             $query_stationid = "SELECT * FROM user_profile WHERE user_account_id='" . $_SESSION['user_id'] . "'";
+                            
                             // Run SELECT query	against user_profile
                             $result = mysqli_query($connection, $query_stationid);
                             if (!$result) {
                                 die ('Select Query Failed: ' . mysql_error());
                             } else {
                 			    print("<br />Select Query Successful <br /><br />");
-                            }			
+                            }
+
                             // Get Value from selected row		
                             $row2 = mysqli_fetch_array($result);
                             if (!$row2) {
@@ -133,6 +132,7 @@
                             print("<hr />");
                             print("Redirecting to home page...<br />");
                             print("<script>getHome();</script>");
+                            
                             // print("<script type='text/javascript'>setTimeout(function() {getHome()},3000);</script>");
                             print("<h3>");
                             print("<a class='btn' href='./home.php' >Continue to Site</a>");

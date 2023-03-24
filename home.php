@@ -49,6 +49,9 @@
 			$stationid = $_SESSION['station_id'];
 			$footername = "Chuck Sylvester";
 
+			// debug statement
+			var_dump($stationid);
+
 			switch ($stationid)
 			{
 			case 826:
