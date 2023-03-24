@@ -1,4 +1,4 @@
-# JLV Dev Setup
+# JLV Dev
 
 ## Install and configure JLV on a local developer machine
 As outlined in *JLV Confluence Developer Handbook - Install and Run JLV 3.0*  

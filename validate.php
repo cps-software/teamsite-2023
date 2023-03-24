@@ -38,7 +38,7 @@
                 window.location = "./home.php";
             }
 		</script>
-	
+
         <div class="container">
             <div class="row">
                 <div class="span12">
@@ -50,29 +50,32 @@
                         $uname=$_POST["user-name"];
                         $upass=$_POST["user-password"];
                         $continue = 0;
-                        // Include MySQL server and Magellan database connection Include File
+
+                        // Include MariaDB server and teamsite database connection Include File
                         include "./inc_dbconnect.php";
+
                         // build SELECT query for username
                         $query_username = "SELECT * FROM user_account WHERE username='" . $uname . "'";
                 
                         // Run SELECT query	against user_account
-                        $result = mysql_query($query_username, $connection);
+                        $result = mysqli_query($connection, $query_username);
                         if (!$result) {
                             die ('Select Query Failed: ' . mysql_error());
                         } else {
-                            // print("Select Query Successful <br /><br />");
+                            print("Select Query Successful <br /><br />");
                         }			
             
                         // Get Value from selected row		
-                        $row1 = mysql_fetch_array($result);
+                        $row1 = mysqli_fetch_array($result);
                         if (!$row1) {
                             print("No Rows Found" . mysql_error());
                             print("<br /><br />");
                         } else {
-                		// print("Row Found");
-                		// print($row1['id'] . " | " . $row1['username'] . " | " . $row1['password']);
-                    	// print("<br /><br />");
+                            print("Row Found");
+                            print($row1['id'] . " | " . $row1['username'] . " | " . $row1['password']);
+                            print("<br /><br />");
                         }			
+
                         // Verify Username - check for exact match and input isn't blank
                         if ($uname == $row1['username'] and $uname != "") {
                             print("Name: ");
@@ -84,6 +87,7 @@
                             print("<i class='icon-remove'></i>");
                             print("<br />");
                         }
+
                         // Verify Password - check for exact match and input isn't blank
                         if ($upass == $row1['password'] and $upass != "") {
                             print("Password: ");
@@ -100,33 +104,35 @@
                             // store session data
                             $_SESSION['user_id']=$row1['id'];
                             $_SESSION['user_name']=$row1['username'];
+
                             // build SELECT query for station_id and favorite color
                             $query_stationid = "SELECT * FROM user_profile WHERE user_account_id='" . $_SESSION['user_id'] . "'";
+                            
                             // Run SELECT query	against user_profile
-                            $result = mysql_query($query_stationid, $connection);
+                            $result = mysqli_query($connection, $query_stationid);
                             if (!$result) {
                                 die ('Select Query Failed: ' . mysql_error());
                             } else {
-                			// print("<br />Select Query Successful <br /><br />");
-                            }			
-                            // Get Value from selected row		
-                            $row2 = mysql_fetch_array($result);
-                            if (!$row2)
-                            {
-                        print("No Rows Found" . mysql_error());
-                            print("<br /><br />");
+                			    print("<br />Select Query Successful <br /><br />");
                             }
-                            else
-                            {
-                                // print("Row Found");
-                                // print("<br /><br />");
+
+                            // Get Value from selected row		
+                            $row2 = mysqli_fetch_array($result);
+                            if (!$row2) {
+                                print("No Rows Found" . mysql_error());
+                                print("<br /><br />");
+                            } else {
+                                print("Row Found");
+                                print("<br /><br />");
                             }			
                             $_SESSION['station_id']=$row2['station_id'];
                             $_SESSION['fav_color']=$row2['favorite_color'];
+
                             // Call JavaScript function to load home page, either immediately or after a short delay
                             print("<hr />");
                             print("Redirecting to home page...<br />");
                             print("<script>getHome();</script>");
+                            
                             // print("<script type='text/javascript'>setTimeout(function() {getHome()},3000);</script>");
                             print("<h3>");
                             print("<a class='btn' href='./home.php' >Continue to Site</a>");

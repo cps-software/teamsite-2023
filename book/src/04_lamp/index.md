@@ -1,3 +1,3 @@
-# LAMP for People
+# LAMP
 
 Things I always forget.

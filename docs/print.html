@@ -149,13 +149,15 @@
 <h4 id="figure-0201-use-case-context-view"><a class="header" href="#figure-0201-use-case-context-view">Figure 02.01 Use Case Context View</a></h4>
 <p><img src="01_overview/../image/uccTeamsite.png" alt="Use Case Context View" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="entity-relationship-diagram"><a class="header" href="#entity-relationship-diagram">Entity-Relationship Diagram</a></h1>
-<p>Figure 02.02 describes the entities and relationships that comprise the Teamsite application.</p>
+<p>Figure 02.02 describes the overarching Teamsite organization, and the entities and relationships that comprise an organization.</p>
 <p><img src="01_overview/../image/erdOrganization.png" alt="Use Case Context View" /></p>
 <h5 id="figure-0202-er-diagram-organization"><a class="header" href="#figure-0202-er-diagram-organization">Figure 02.02 ER Diagram: Organization</a></h5>
 <br />
 <hr />
 <br />
 <p>Figure 02.03 further details the entities and relationships that comprise the Teamsite product.</p>
+<p>Building great software products can be compared to other endeavours, such as building an house or making a Hollywood movie.</p>
+<p><em><strong>Requirements (&quot;the what&quot;)</strong></em> describe what a software product should be, just like a movie script describes the goals, setting, and dialog of a movie. <em><strong>Implementation (&quot;the how&quot;)</strong></em> is the set of activities needed build a software product, in a similar way that filming a movie includes the activities needed to produce a great film. <em><strong>Realization</strong></em> is the final product, be it a working application deployed to the cloud, or a movie that is distributed to theaters across the world.</p>
 <p><img src="01_overview/../image/erdProduct.png" alt="Use Case Context View" /></p>
 <h5 id="figure-0203-er-diagram-product"><a class="header" href="#figure-0203-er-diagram-product">Figure 02.03 ER Diagram: Product</a></h5>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="next-topic"><a class="header" href="#next-topic">Next Topic</a></h1>
@@ -175,6 +177,10 @@
 </code></pre>
 <p>To quit the inteactive shell:</p>
 <pre><code class="language-bash">\q
+</code></pre>
+<h4 id="add-mariadb-to-path"><a class="header" href="#add-mariadb-to-path">Add MariaDB to $PATH</a></h4>
+<p>To add visibility to the MariaDB executables, update .zshrc to expand the $PATH environment variable:</p>
+<pre><code class="language-text">export PATH=/Applications/XAMPP/bin:$PATH
 </code></pre>
 <h4 id="start-mariadb-to-administer"><a class="header" href="#start-mariadb-to-administer">Start MariaDB to Administer</a></h4>
 <p>Launch MacOS app, manager-osx.
@@ -215,7 +221,13 @@ MariaDB&gt; desc [tablename];</p>
 <pre><code class="language-text">source [/full/path/file.sql]
 </code></pre>
 <p>Run each of the following scripts in this order:</p>
-<pre><code class="language-text">source /Library/WebServer/Documents/nca-magellan/dbscript/create_db_magellan.sql
+<pre><code class="language-text">source ~/swdev/csw/teamsite/dbscript/create_db_teamsite.sql
+source ~/swdev/csw/teamsite/dbscript/create_tbl_user_account.sql
+source ~/swdev/csw/teamsite/dbscript/insert_row_user_account.sql
+source ~/swdev/csw/teamsite/dbscript/create_tbl_user_profile.sql
+source ~/swdev/csw/teamsite/dbscript/insert_row_user_profile.sql
+
+(address below later)
 source /Library/WebServer/Documents/nca-magellan/dbscript/insert_demo_data.sql
 source /Library/WebServer/Documents/nca-magellan/dbscript/create_tbl_funeral_home.sql
 source /Library/WebServer/Documents/nca-magellan/dbscript/create_tbl_zipcode.sql
@@ -341,7 +353,7 @@ java -cp ../target ClassOne
 java -classpath ../target com.csylvester.app.ClassOne
 java -cp ../target com.csylvester.app.ClassOne
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="lamp-for-people"><a class="header" href="#lamp-for-people">LAMP for People</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lamp"><a class="header" href="#lamp">LAMP</a></h1>
 <p>Things I always forget.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started-1"><a class="header" href="#getting-started-1">Getting Started</a></h1>
 <h3 id="topic-one"><a class="header" href="#topic-one">Topic One</a></h3>
@@ -351,7 +363,7 @@ java -cp ../target com.csylvester.app.ClassOne
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rust"><a class="header" href="#rust">Rust</a></h1>
 <p>Things I always forget.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rust-sub-section-2"><a class="header" href="#rust-sub-section-2">Rust Sub Section 2</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jlv-dev-setup"><a class="header" href="#jlv-dev-setup">JLV Dev Setup</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jlv-dev"><a class="header" href="#jlv-dev">JLV Dev</a></h1>
 <h2 id="install-and-configure-jlv-on-a-local-developer-machine"><a class="header" href="#install-and-configure-jlv-on-a-local-developer-machine">Install and configure JLV on a local developer machine</a></h2>
 <p>As outlined in <em>JLV Confluence Developer Handbook - Install and Run JLV 3.0</em><br />
 By David King</p>
